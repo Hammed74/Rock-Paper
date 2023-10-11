@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
@@ -10,16 +10,65 @@
         function getComputerChoice(){
             let computerChoice = (Math.random() * 10);
             if (computerChoice <= 3.33){
-                return "Rock!";
+                
+                return "rock";
+               
             } else if (computerChoice > 3.33 && computerChoice <= 6.66){
-                return "Scissors!"
+                return "scissors";
+              
             } else{
-                return "Paper!"
+                return "paper";
+               
             }
-
+        
         }
+     
+      function playRound(){
+        let userChoice = prompt("Enter your choice","Rock Paper, Scissors!").toLowerCase();
+        let computerHand = getComputerChoice();
+        if (userChoice == computerHand){
+            return "Draw!"
+        } else if ((userChoice === "rock") && (computerHand === "scissors")){
+                return "Congrats! You win, " + userChoice + " beats " + computerHand + "!"
+        } else if ((userChoice === "rock") && (computerHand === "paper")){
+                return "Sorry! You lose, " + computerHand + " beats " + userChoice + "!"
+        } else if ((userChoice === "paper") && (computerHand === "rock")){
+                return "Congrats! You win, " + userChoice + " beats " + computerHand + "!"
+        } else if ((userChoice === "paper") && (computerHand === "scissors")){
+                return "Sorry! You lose, " + computerHand + " beats " + userChoice + "!"
+        } else if ((userChoice === "scissors") && (computerHand === "paper")){
+                return "Congrats! You win, " + userChoice + " beats " + computerHand + "!"
+        } else if ((userChoice === "scissors") && (computerHand === "rock")){
+                return "Sorry! You lose, " + computerHand + " beats " + userChoice + "!"
+        } 
+        else {
+            return "Type ONLY rock, paper or scissors!";
+        }
+    }
+   function game(rounds, playerWins = 0, computerWins = 0){
+    if (rounds > 0){
+        let result = playRound();
+        console.log(result);
+        
+        if (result.includes("You win")) {
+            playerWins++;
+        } else if (result.includes("You lose")){
+            computerWins++;
+        }
+        
+        game(rounds - 1, playerWins, computerWins);
+    } else {
+        if (playerWins > computerWins) {
+            console.log("You win the game!");
+         } else if (playerWins < computerWins){
+            console.log("Computer wins the game!");
+        } else {
+            console.log("It's a draw!")
+        }
+     }
+    }
 
-        console.log(computerChoice)
+ game(5);
     </script>
 </body>
 </html>
