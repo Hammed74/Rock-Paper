@@ -1,0 +1,22 @@
+.buttons{
+    display: flex;
+    margin: 40px;
+    justify-content: space-evenly;
+}
+.rock{
+    padding: 10px;
+    background-color:rgb(255, 141, 60);
+    cursor: pointer;
+}
+
+.paper{
+    padding: 10px;
+    background-color:rgb(102, 184, 255);
+    cursor: pointer;
+}
+
+.scissors{
+    padding: 10px;
+    background-color:rgb(11, 128, 7);
+    cursor: pointer;
+}
