@@ -5,6 +5,7 @@ const gameText = document.querySelector(".verdict");
 const userSelection = document.querySelector(".user-choice");
 const cpuSelection = document.querySelector(".computer-choice");
 const gameResults = document.querySelector(".game-results");
+const startVerdict = document.querySelector(".startVerdict");
 
 document.body.appendChild(gameText);
 
@@ -20,6 +21,7 @@ function getComputerChoice() {
 }
 
 rock.addEventListener("click", function () {
+  startVerdict.remove();
   let computerHand = getComputerChoice();
   let verdict = playRoundRock(computerHand);
   userSelection.textContent = "You chose: Rock";
@@ -34,6 +36,7 @@ rock.addEventListener("click", function () {
 });
 
 paper.addEventListener("click", function () {
+  startVerdict.remove();
   let computerHand = getComputerChoice();
   let verdict = playRoundPaper(computerHand);
   userSelection.textContent = "You chose: Paper";
@@ -48,6 +51,7 @@ paper.addEventListener("click", function () {
   document.body.appendChild(gameText);
 });
 scissors.addEventListener("click", function () {
+  startVerdict.remove();
   let computerHand = getComputerChoice();
   let verdict = playRoundScissors(computerHand);
   userSelection.textContent = "You chose: Scissors";

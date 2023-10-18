@@ -33,10 +33,24 @@ h1{
   font-size: 92px;
   text-align: center;
   margin: 30px auto;
-  margin-top: 150px;
+  margin-top: 115px;
   font-family: Montserrat;
   font-weight: 200;
   width: 400px;
+  animation: fadeIn3 5s;
+}
+
+.startVerdict{
+    color: white;
+  font-size: 86px;
+  text-align: center;
+  margin: 30px auto;
+  margin-top: 70px;
+  font-family: Montserrat;
+  font-weight: 200;
+  width: 400px;
+  animation: startVerdict 2s;
+  animation-iteration-count: infinite;
 }
 @font-face {
   font-family: Montserrat;
@@ -104,10 +118,26 @@ h1{
     animation: fadeIn2 5s;
 }
 
-.verdict{
-    animation: fadeIn3 5s;
-}
 img{
    display: block;
    margin: 0px auto;
+}
+
+@keyframes startVerdict{
+    0%{
+        opacity: 1;
+        color: rgb(20,20,20);
+        font-size: 78px;
+
+    }
+    50%{
+        opacity: 100;
+        color: white;
+        font-size: 86px;
+    }
+    100%{
+        opacity: 1;
+        color:rgb(20,20,20);
+        font-size: 78px;
+    }
 }
