@@ -1,22 +1,54 @@
-.buttons{
+body {
+  background-color: black;
+}
+.buttons {
+  display: flex;
+  margin: 40px;
+  justify-content: space-evenly;
+}
+.rock {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.paper {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.scissors {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.verdict {
+  color: white;
+  font-size: 92px;
+  text-align: center;
+  margin: 30px auto;
+  margin-top: 150px;
+  font-family: Montserrat;
+  font-weight: 200;
+  width: 400px;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(Montserrat.ttf);
+}
+
+.game-results{
     display: flex;
-    margin: 40px;
-    justify-content: space-evenly;
-}
-.rock{
-    padding: 10px;
-    background-color:rgb(255, 141, 60);
-    cursor: pointer;
-}
-
-.paper{
-    padding: 10px;
-    background-color:rgb(102, 184, 255);
-    cursor: pointer;
+    width: 80%;
+    justify-content: space-between;
+    color:white;
+    font-family: Montserrat;
+    font-weight: 300;
+    margin: 20px auto;
+    font-size: 44px;
 }
 
-.scissors{
-    padding: 10px;
-    background-color:rgb(11, 128, 7);
-    cursor: pointer;
+.user-choice,.computer-choice{
+    padding: 20px;
 }
