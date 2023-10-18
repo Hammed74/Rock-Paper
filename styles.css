@@ -1,6 +1,11 @@
 body {
   background-color: black;
 }
+h1{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
 .buttons {
   display: flex;
   margin: 40px;
@@ -34,21 +39,75 @@ body {
   width: 400px;
 }
 @font-face {
-    font-family: Montserrat;
-    src: url(Montserrat.ttf);
+  font-family: Montserrat;
+  src: url(Montserrat.ttf);
 }
 
-.game-results{
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    color:white;
-    font-family: Montserrat;
-    font-weight: 300;
-    margin: 20px auto;
-    font-size: 44px;
+.game-results {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  color: white;
+  font-family: Montserrat;
+  font-weight: 300;
+  margin: 20px auto;
+  font-size: 44px;
 }
 
-.user-choice,.computer-choice{
-    padding: 20px;
+.user-choice,
+.computer-choice {
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+   } 50% {
+        opacity: 10;
+    }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+   } 35% {
+        opacity: 0;
+    }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn3 {
+  0% {
+    opacity: 0;
+   } 75% {
+        opacity: 0;
+    }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.user-choice{
+    animation: fadeIn 5s;
+}
+
+.computer-choice{
+    animation: fadeIn2 5s;
+}
+
+.verdict{
+    animation: fadeIn3 5s;
+}
+img{
+   display: block;
+   margin: 0px auto;
 }

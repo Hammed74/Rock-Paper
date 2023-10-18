@@ -2,8 +2,9 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const gameText = document.querySelector(".verdict");
-const userSelection = document.querySelector(".user-choice")
+const userSelection = document.querySelector(".user-choice");
 const cpuSelection = document.querySelector(".computer-choice");
+const gameResults = document.querySelector(".game-results");
 
 document.body.appendChild(gameText);
 
@@ -17,32 +18,52 @@ function getComputerChoice() {
     return "Paper";
   }
 }
+
 rock.addEventListener("click", function () {
-  let verdict = playRoundRock();
-  userSelection.textContent = "You chose: Rock"
-  cpuSelection.textContent = `Computer chose: ${getComputerChoice()}`;
+  let computerHand = getComputerChoice();
+  let verdict = playRoundRock(computerHand);
+  userSelection.textContent = "You chose: Rock";
+  cpuSelection.textContent = `Computer chose: ${computerHand}`;
   gameText.textContent = verdict;
-
-
+  userSelection.remove();
+  cpuSelection.remove();
+  gameText.remove();
+  gameResults.appendChild(userSelection);
+  gameResults.appendChild(cpuSelection);
+  document.body.appendChild(gameText);
 });
-paper.addEventListener("click", function () {
-  let verdict = playRoundPaper();
-  userSelection.textContent = "You chose: Paper";
-  cpuSelection.textContent = `Computer chose: ${getComputerChoice()}`;
-  gameText.textContent = verdict;
 
+paper.addEventListener("click", function () {
+  let computerHand = getComputerChoice();
+  let verdict = playRoundPaper(computerHand);
+  userSelection.textContent = "You chose: Paper";
+  cpuSelection.textContent = `Computer chose: ${computerHand}`;
+  gameText.textContent = verdict;
+  gameText.textContent = verdict;
+  userSelection.remove();
+  cpuSelection.remove();
+  gameText.remove();
+  gameResults.appendChild(userSelection);
+  gameResults.appendChild(cpuSelection);
+  document.body.appendChild(gameText);
 });
 scissors.addEventListener("click", function () {
-  let verdict = playRoundScissors();
+  let computerHand = getComputerChoice();
+  let verdict = playRoundScissors(computerHand);
   userSelection.textContent = "You chose: Scissors";
-  cpuSelection.textContent = `Computer chose: ${getComputerChoice()}`;
+  cpuSelection.textContent = `Computer chose: ${computerHand}`;
   gameText.textContent = verdict;
-
+  gameText.textContent = verdict;
+  userSelection.remove();
+  cpuSelection.remove();
+  gameText.remove();
+  gameResults.appendChild(userSelection);
+  gameResults.appendChild(cpuSelection);
+  document.body.appendChild(gameText);
 });
 
-function playRoundRock() {
+function playRoundRock(computerHand) {
   let userChoice = "Rock";
-  let computerHand = getComputerChoice();
   if (userChoice == computerHand) {
     return "Draw!";
   } else if (userChoice === "Rock" && computerHand === "Scissors") {
@@ -60,9 +81,8 @@ function playRoundRock() {
   }
 }
 
-function playRoundPaper() {
+function playRoundPaper(computerHand) {
   let userChoice = "Paper";
-  let computerHand = getComputerChoice();
   if (userChoice == computerHand) {
     return "Draw!";
   } else if (userChoice === "Rock" && computerHand === "Scissors") {
@@ -80,9 +100,8 @@ function playRoundPaper() {
   }
 }
 
-function playRoundScissors() {
+function playRoundScissors(computerHand) {
   let userChoice = "Scissors";
-  let computerHand = getComputerChoice();
   if (userChoice == computerHand) {
     return "Draw!";
   } else if (userChoice === "Rock" && computerHand === "Scissors") {
@@ -100,7 +119,7 @@ function playRoundScissors() {
   }
 }
 
-function game(rounds, playerWins = 0, computerWins = 0) {
+/*function game(rounds, playerWins = 0, computerWins = 0) {
   if (rounds > 0) {
     let result = playRound();
     return result;
@@ -121,4 +140,4 @@ function game(rounds, playerWins = 0, computerWins = 0) {
       return "It's a draw!";
     }
   }
-}
+}*/
