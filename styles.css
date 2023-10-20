@@ -1,13 +1,10 @@
-*{
-   
-}
 body {
   background-color: black;
 }
-h1{
-    color: white;
-    text-align: center;
-    font-size: 60px;
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 60px;
 }
 .buttons {
   display: flex;
@@ -25,23 +22,23 @@ h1{
   background-color: transparent;
   cursor: pointer;
 }
-.player-score{
-    color:white;
-    display: inline-block;
-    font-family: Montserrat;
-    animation: fadeIn3 4s;
-    font-weight: 700;
-    font-size: 24px;
+.player-score {
+  color: white;
+  display: inline-block;
+  font-family: Montserrat;
+  animation: fadeIn3 4s;
+  font-weight: 700;
+  font-size: 24px;
 }
-.computer-score{
-    color:white;
-    width: 50px;
-    margin-left: auto;
-    display: inline-block;
-    font-family: Montserrat;
-    animation: fadeIn3 4s;
-    font-weight: 700;
-    font-size: 24px;
+.computer-score {
+  color: white;
+  width: 50px;
+  margin-left: auto;
+  display: inline-block;
+  font-family: Montserrat;
+  animation: fadeIn3 4s;
+  font-weight: 700;
+  font-size: 24px;
 }
 .scissors {
   border: none;
@@ -60,8 +57,8 @@ h1{
   animation: fadeIn3 4s;
 }
 
-.startVerdict{
-    color: white;
+.startVerdict {
+  color: white;
   font-size: 86px;
   text-align: center;
   margin: 30px auto;
@@ -96,10 +93,11 @@ h1{
 @keyframes fadeIn {
   0% {
     opacity: 0;
-   } 50% {
-        opacity: 10;
-    }
-  
+  }
+  50% {
+    opacity: 10;
+  }
+
   100% {
     opacity: 1;
   }
@@ -108,10 +106,11 @@ h1{
 @keyframes fadeIn2 {
   0% {
     opacity: 0;
-   } 35% {
-        opacity: 0;
-    }
-  
+  }
+  35% {
+    opacity: 0;
+  }
+
   100% {
     opacity: 1;
   }
@@ -120,84 +119,82 @@ h1{
 @keyframes fadeIn3 {
   0% {
     opacity: 0;
-   } 75% {
-        opacity: 0;
-    }
-  
+  }
+  75% {
+    opacity: 0;
+  }
+
   100% {
     opacity: 1;
   }
 }
 
-
-.user-choice{
-    animation: fadeIn 4s;
+.user-choice {
+  animation: fadeIn 4s;
 }
 
-.computer-choice{
-    animation: fadeIn2 4s;
+.computer-choice {
+  animation: fadeIn2 4s;
 }
 
-img{
-   display: block;
-   margin: 0px auto;
+img {
+  display: block;
+  margin: 0px auto;
 }
 
-.scores{
-    padding-top: 30px;
+.scores {
+  padding-top: 30px;
 }
-.p-scores{
-    margin: 20px;
-}
-
-.p-text{
-    margin:0;
-    color:white;
-    font-family: Montserrat;
-}
-.c-text{
-    margin:0;
-    color:white;
-    font-family: Montserrat;
-
+.p-scores {
+  margin: 20px;
 }
 
-.c-scores{
-    margin: 20px;
+.p-text {
+  margin: 0;
+  color: white;
+  font-family: Montserrat;
+}
+.c-text {
+  margin: 0;
+  color: white;
+  font-family: Montserrat;
 }
 
-@keyframes startVerdict{
-    0%{
-        opacity: 1;
-        color: rgb(20,20,20);
-        font-size: 78px;
-
-    }
-    50%{
-        opacity: 100;
-        color: white;
-        font-size: 86px;
-    }
-    100%{
-        opacity: 1;
-        color:rgb(20,20,20);
-        font-size: 78px;
-    }
+.c-scores {
+  margin: 20px;
 }
 
-.rock:hover{
-    filter:drop-shadow(0px 0px 10px white);
+@keyframes startVerdict {
+  0% {
+    opacity: 1;
+    color: rgb(20, 20, 20);
+    font-size: 78px;
+  }
+  50% {
+    opacity: 100;
+    color: white;
+    font-size: 86px;
+  }
+  100% {
+    opacity: 1;
+    color: rgb(20, 20, 20);
+    font-size: 78px;
+  }
 }
 
-.paper:hover{
-    filter:drop-shadow(0px 0px 10px white);
+.rock:hover {
+  filter: drop-shadow(0px 0px 10px white);
 }
 
-.scissors:hover{
-    filter:drop-shadow(0px 0px 10px white);
+.paper:hover {
+  filter: drop-shadow(0px 0px 10px white);
 }
 
-.rock:active{
-    right: 5px;
-    bottom: 5px;
+.scissors:hover {
+  filter: drop-shadow(0px 0px 10px white);
+}
+
+.rock:active {
+  right: 5px;
+  bottom: 5px;
 }

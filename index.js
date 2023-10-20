@@ -47,8 +47,6 @@ rock.addEventListener("click", function () {
   pScores.appendChild(playerScore);
   cScores.appendChild(cText);
   cScores.appendChild(computerScore);
-  playerScore.textContent = playerWins;
-  computerScore.textContent = computerWins;
 
   if (verdict == "YOU WIN!") {
     playerWins++;
@@ -113,9 +111,7 @@ scissors.addEventListener("click", function () {
   cScores.appendChild(cText);
   cScores.appendChild(computerScore);
 
-
- 
-        if (verdict == "YOU WIN!") {
+  if (verdict == "YOU WIN!") {
     gameText.textContent = verdict;
     playerWins++;
   } else if (verdict == "YOU LOSE!") {
@@ -167,7 +163,7 @@ function playRoundPaper(computerHand) {
 
 function playRoundScissors(computerHand) {
   let userChoice = "Scissors";
-        if (userChoice == computerHand) {
+  if (userChoice == computerHand) {
     return "Draw!";
   } else if (userChoice === "Rock" && computerHand === "Scissors") {
     return "YOU WIN!";
