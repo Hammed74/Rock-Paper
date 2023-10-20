@@ -1,3 +1,6 @@
+*{
+   
+}
 body {
   background-color: black;
 }
@@ -22,7 +25,20 @@ h1{
   background-color: transparent;
   cursor: pointer;
 }
-
+.player-score{
+    color:white;
+    display: inline-block;
+    font-family: Montserrat;
+    animation: fadeIn3 4s;
+}
+.computer-score{
+    color:white;
+    width: 50px;
+    margin-left: auto;
+    display: inline-block;
+    font-family: Montserrat;
+    animation: fadeIn3 4s;
+}
 .scissors {
   border: none;
   background-color: transparent;
@@ -33,11 +49,11 @@ h1{
   font-size: 92px;
   text-align: center;
   margin: 30px auto;
-  margin-top: 115px;
+  margin-top: -125px;
   font-family: Montserrat;
   font-weight: 200;
   width: 400px;
-  animation: fadeIn3 5s;
+  animation: fadeIn3 4s;
 }
 
 .startVerdict{
@@ -111,16 +127,38 @@ h1{
 
 
 .user-choice{
-    animation: fadeIn 5s;
+    animation: fadeIn 4s;
 }
 
 .computer-choice{
-    animation: fadeIn2 5s;
+    animation: fadeIn2 4s;
 }
 
 img{
    display: block;
    margin: 0px auto;
+}
+
+.scores{
+    padding-top: 30px;
+}
+.p-scores{
+    margin: 20px;
+}
+
+.p-text{
+    margin:0;
+    color:white;
+    font-family: Montserrat;
+}
+.c-text{
+    margin:0;
+    color:white;
+    font-family: Montserrat;
+}
+
+.c-scores{
+    margin: 20px;
 }
 
 @keyframes startVerdict{
@@ -140,4 +178,21 @@ img{
         color:rgb(20,20,20);
         font-size: 78px;
     }
+}
+
+.rock:hover{
+    filter:drop-shadow(0px 0px 10px white);
+}
+
+.paper:hover{
+    filter:drop-shadow(0px 0px 10px white);
+}
+
+.scissors:hover{
+    filter:drop-shadow(0px 0px 10px white);
+}
+
+.rock:active{
+    right: 5px;
+    bottom: 5px;
 }

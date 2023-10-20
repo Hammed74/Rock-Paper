@@ -6,6 +6,13 @@ const userSelection = document.querySelector(".user-choice");
 const cpuSelection = document.querySelector(".computer-choice");
 const gameResults = document.querySelector(".game-results");
 const startVerdict = document.querySelector(".startVerdict");
+const playerScore = document.querySelector(".player-score");
+const computerScore = document.querySelector(".computer-score");
+const scores = document.querySelector(".scores");
+const pScores = document.querySelector(".p-scores");
+const cScores = document.querySelector(".c-scores");
+const pText = document.querySelector(".p-text");
+const cText = document.querySelector(".c-text");
 
 document.body.appendChild(gameText);
 
@@ -19,7 +26,8 @@ function getComputerChoice() {
     return "Paper";
   }
 }
-
+let playerWins = 0;
+let computerWins = 0;
 rock.addEventListener("click", function () {
   startVerdict.remove();
   let computerHand = getComputerChoice();
@@ -33,6 +41,23 @@ rock.addEventListener("click", function () {
   gameResults.appendChild(userSelection);
   gameResults.appendChild(cpuSelection);
   document.body.appendChild(gameText);
+  pText.textContent = "Your Score:";
+  cText.textContent = "Computer Score:";
+  pScores.appendChild(pText);
+  pScores.appendChild(playerScore);
+  cScores.appendChild(cText);
+  cScores.appendChild(computerScore);
+  playerScore.textContent = playerWins;
+  computerScore.textContent = computerWins;
+
+  if (verdict == "YOU WIN!") {
+    playerWins++;
+  } else if (verdict == "YOU LOSE!") {
+    computerWins++;
+  }
+
+  playerScore.textContent = playerWins;
+  computerScore.textContent = computerWins;
 });
 
 paper.addEventListener("click", function () {
@@ -49,7 +74,24 @@ paper.addEventListener("click", function () {
   gameResults.appendChild(userSelection);
   gameResults.appendChild(cpuSelection);
   document.body.appendChild(gameText);
+  pText.textContent = "Your Score:";
+  cText.textContent = "Computer Score:";
+  playerScore.textContent = playerWins;
+  pScores.appendChild(pText);
+  pScores.appendChild(playerScore);
+  cScores.appendChild(cText);
+  cScores.appendChild(computerScore);
+
+  if (verdict == "YOU WIN!") {
+    playerWins++;
+  } else if (verdict == "YOU LOSE!") {
+    computerWins++;
+  }
+
+  playerScore.textContent = playerWins;
+  computerScore.textContent = computerWins;
 });
+
 scissors.addEventListener("click", function () {
   startVerdict.remove();
   let computerHand = getComputerChoice();
@@ -57,13 +99,32 @@ scissors.addEventListener("click", function () {
   userSelection.textContent = "You chose: Scissors";
   cpuSelection.textContent = `Computer chose: ${computerHand}`;
   gameText.textContent = verdict;
-  gameText.textContent = verdict;
   userSelection.remove();
   cpuSelection.remove();
   gameText.remove();
   gameResults.appendChild(userSelection);
   gameResults.appendChild(cpuSelection);
   document.body.appendChild(gameText);
+  pText.textContent = "Your Score:";
+  cText.textContent = "Computer Score:";
+  playerScore.textContent = playerWins;
+  pScores.appendChild(pText);
+  pScores.appendChild(playerScore);
+  cScores.appendChild(cText);
+  cScores.appendChild(computerScore);
+
+
+ 
+        if (verdict == "YOU WIN!") {
+    gameText.textContent = verdict;
+    playerWins++;
+  } else if (verdict == "YOU LOSE!") {
+    gameText.textContent = verdict;
+    computerWins++;
+  }
+
+  playerScore.textContent = playerWins;
+  computerScore.textContent = computerWins;
 });
 
 function playRoundRock(computerHand) {
@@ -106,7 +167,7 @@ function playRoundPaper(computerHand) {
 
 function playRoundScissors(computerHand) {
   let userChoice = "Scissors";
-  if (userChoice == computerHand) {
+        if (userChoice == computerHand) {
     return "Draw!";
   } else if (userChoice === "Rock" && computerHand === "Scissors") {
     return "YOU WIN!";
