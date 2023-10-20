@@ -30,6 +30,8 @@ h1{
     display: inline-block;
     font-family: Montserrat;
     animation: fadeIn3 4s;
+    font-weight: 700;
+    font-size: 24px;
 }
 .computer-score{
     color:white;
@@ -38,6 +40,8 @@ h1{
     display: inline-block;
     font-family: Montserrat;
     animation: fadeIn3 4s;
+    font-weight: 700;
+    font-size: 24px;
 }
 .scissors {
   border: none;
@@ -49,7 +53,7 @@ h1{
   font-size: 92px;
   text-align: center;
   margin: 30px auto;
-  margin-top: -125px;
+  margin-top: -225px;
   font-family: Montserrat;
   font-weight: 200;
   width: 400px;
@@ -155,6 +159,7 @@ img{
     margin:0;
     color:white;
     font-family: Montserrat;
+
 }
 
 .c-scores{
