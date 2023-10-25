@@ -28,13 +28,16 @@ function getComputerChoice() {
 }
 let playerWins = 0;
 let computerWins = 0;
+let isOver = false
 rock.addEventListener("click", function () {
+  if (isOver){
+    reset()
+  }
   startVerdict.remove();
   let computerHand = getComputerChoice();
   let verdict = playRoundRock(computerHand);
   userSelection.textContent = "You chose: Rock";
   cpuSelection.textContent = `Computer chose: ${computerHand}`;
-  gameText.textContent = verdict;
   userSelection.remove();
   cpuSelection.remove();
   gameText.remove();
@@ -48,10 +51,24 @@ rock.addEventListener("click", function () {
   cScores.appendChild(cText);
   cScores.appendChild(computerScore);
 
-  if (verdict == "YOU WIN!") {
+  if (verdict === "YOU WIN!" && playerWins === 4) {
+    gameText.style.marginTop = "-280px";
+    gameText.textContent = "You won the match!";
+    playerWins++;
+    isOver = true;
+  } else if (verdict === "YOU LOSE!" && computerWins === 4) {
+    gameText.style.marginTop = "-280px";
+    gameText.textContent = "Computer won the match!";
+    computerWins++;
+    isOver = true;
+  } else if (verdict == "YOU WIN!") {
+    gameText.textContent = verdict;
     playerWins++;
   } else if (verdict == "YOU LOSE!") {
+    gameText.textContent = verdict;
     computerWins++;
+  } else {
+    gameText.textContent = verdict;
   }
 
   playerScore.textContent = playerWins;
@@ -59,13 +76,16 @@ rock.addEventListener("click", function () {
 });
 
 paper.addEventListener("click", function () {
+  if (isOver) {
+    reset();
+  }
   startVerdict.remove();
   let computerHand = getComputerChoice();
   let verdict = playRoundPaper(computerHand);
   userSelection.textContent = "You chose: Paper";
   cpuSelection.textContent = `Computer chose: ${computerHand}`;
-  gameText.textContent = verdict;
-  gameText.textContent = verdict;
+  //gameText.textContent = verdict;
+  //gameText.textContent = verdict;
   userSelection.remove();
   cpuSelection.remove();
   gameText.remove();
@@ -74,16 +94,29 @@ paper.addEventListener("click", function () {
   document.body.appendChild(gameText);
   pText.textContent = "Your Score:";
   cText.textContent = "Computer Score:";
-  playerScore.textContent = playerWins;
   pScores.appendChild(pText);
   pScores.appendChild(playerScore);
   cScores.appendChild(cText);
   cScores.appendChild(computerScore);
 
-  if (verdict == "YOU WIN!") {
+  if (verdict === "YOU WIN!" && playerWins === 4) {
+    gameText.style.marginTop = "-280px";
+    gameText.textContent = "You won the match!";
+    playerWins++;
+    isOver = true
+  } else if (verdict === "YOU LOSE!" && computerWins === 4) {
+    gameText.style.marginTop = "-280px";
+    gameText.textContent = "Computer won the match!";
+    computerWins++;
+    isOver = true
+  } else if (verdict == "YOU WIN!") {
+    gameText.textContent = verdict;
     playerWins++;
   } else if (verdict == "YOU LOSE!") {
+    gameText.textContent = verdict;
     computerWins++;
+  } else{
+    gameText.textContent = verdict
   }
 
   playerScore.textContent = playerWins;
@@ -91,12 +124,14 @@ paper.addEventListener("click", function () {
 });
 
 scissors.addEventListener("click", function () {
+  if (isOver) {
+    reset();
+  }
   startVerdict.remove();
   let computerHand = getComputerChoice();
   let verdict = playRoundScissors(computerHand);
   userSelection.textContent = "You chose: Scissors";
   cpuSelection.textContent = `Computer chose: ${computerHand}`;
-  gameText.textContent = verdict;
   userSelection.remove();
   cpuSelection.remove();
   gameText.remove();
@@ -105,27 +140,38 @@ scissors.addEventListener("click", function () {
   document.body.appendChild(gameText);
   pText.textContent = "Your Score:";
   cText.textContent = "Computer Score:";
-  playerScore.textContent = playerWins;
   pScores.appendChild(pText);
   pScores.appendChild(playerScore);
   cScores.appendChild(cText);
   cScores.appendChild(computerScore);
 
-  if (verdict == "YOU WIN!") {
+  if (verdict === "YOU WIN!" && playerWins === 4) {
+    gameText.style.marginTop = "-280px";
+    gameText.textContent = "You won the match!";
+    playerWins++;
+    isOver = true;
+  } else if (verdict === "YOU LOSE!" && computerWins === 4) {
+    gameText.style.marginTop = "-280px";
+    gameText.textContent = "Computer won the match!";
+    computerWins++;
+    isOver = true;
+  } else if (verdict == "YOU WIN!") {
     gameText.textContent = verdict;
     playerWins++;
   } else if (verdict == "YOU LOSE!") {
     gameText.textContent = verdict;
     computerWins++;
+  } else {
+    gameText.textContent = verdict;
   }
 
   playerScore.textContent = playerWins;
   computerScore.textContent = computerWins;
 });
-
+let count = 0;
 function playRoundRock(computerHand) {
   let userChoice = "Rock";
-  if (userChoice == computerHand) {
+  if (userChoice === computerHand) {
     return "Draw!";
   } else if (userChoice === "Rock" && computerHand === "Scissors") {
     return "YOU WIN!";
@@ -180,25 +226,8 @@ function playRoundScissors(computerHand) {
   }
 }
 
-/*function game(rounds, playerWins = 0, computerWins = 0) {
-  if (rounds > 0) {
-    let result = playRound();
-    return result;
-
-    if (result.includes("You win")) {
-      playerWins++;
-    } else if (result.includes("You lose")) {
-      computerWins++;
-    }
-
-    game(rounds - 1, playerWins, computerWins);
-  } else {
-    if (playerWins > computerWins) {
-      return "You win the game!";
-    } else if (playerWins < computerWins) {
-      return "Computer wins the game!";
-    } else {
-      return "It's a draw!";
-    }
-  }
-}*/
+function reset(){
+playerWins = 0
+computerWins = 0
+isOver = false
+}
